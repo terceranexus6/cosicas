@@ -1,0 +1,155 @@
+#include<iostream>
+
+using namespace std;
+
+class Enigma{
+   private:
+      //variables clavijero
+      char L1;
+      char L2;
+      char L3;
+      char L4;
+   
+      //variables rotores
+    //  int rotor1;
+     // int rotor2;
+    //  int rotor3;
+      
+     // char act1,act2,act3;
+   
+   
+   public:
+      void SetClavijero(char l1,char l2,char l3, char l4){
+         L1=l1;
+         L2=l2;
+         L3=l3;
+         L4=l4;
+      }
+    /*  void SetRotores(int r1,int r2, int r3){
+         rotor1=r1;
+         rotor2=r2;
+         rotor3=r3;
+      }
+*//*      void Clavijero{
+         cout<<"Primero vamos a intercambiar dos letras.\nsi no quieres cambiarlas solo escribe la misma letra. vamos a cambiar hasta 2\nletras.\n\n";
+         cout<<"Introduce una letra: ";
+         cin>>L1;
+   
+         cout<<"Introduce ahora la letra por la cual vamos a intercambiarla, o en su defecto la misma: ";
+         cin>>L2;
+   
+         cout<<"Introduce ahora una segunda letra a intercambiar: ";
+         cin>>L3;
+   
+         cout<<"De nuevo, introduce ahora la letra por la cual vamos a intercambiarla, o en su defecto la misma:  ";
+         cin>>L4;     
+      }
+      */
+      
+      int ROTOR(char act){
+         int rotorf;
+         if(act=='s'||act=='S'){
+            rotorf=('b'-'a');
+      }
+         else if(act=='N'||act=='n'){
+            rotorf=0;
+      }
+      return rotorf;
+      }
+      
+      
+      
+      char LETRA(char let){
+         char letraf;
+         if(let==L1){
+            letraf=L2;
+         }
+         else if(let==L3){
+            letraf=L4;
+         }
+         else if(let==L2){
+            letraf=L1;
+         }
+         else if(let==L4){
+            letraf=L3;
+         }
+         else{
+            letraf=let;
+         }
+         return letraf;
+            }
+      
+};
+
+int main(){
+   
+   Enigma cifrar;
+   char lc1,lc2,lc3,lc4;
+   char rot1,rot2,rot3;
+   char letra1,letra2,letra3,letra4,letra5;
+   
+   cout<<"Introduce ahora la letra por la cual vamos a intercambiarla, o en su defecto la misma: ";
+   cin>>lc1;//letracambio1
+   
+   cout<<"Introduce ahora una segunda letra a intercambiar: ";
+   cin>>lc2;
+   
+   cout<<"De nuevo, introduce ahora la letra por la cual vamos a intercambiarla, o en su defecto la misma:  ";
+   cin>>lc3;
+   
+   cout<<"Introduce ahora una segunda letra a intercambiar: ";
+   cin>>lc4;
+   
+   cifrar.SetClavijero(lc1,lc2,lc3,lc4);
+   
+   
+   cout<<"Activar rotor 1: s/n: ";
+   cin>>rot1;
+   
+   int rot1dev=cifrar.ROTOR(rot1);
+   
+   cout<<"Activar rotor 2: s/n: ";
+   cin>>rot2;
+   
+   int rot2dev=cifrar.ROTOR(rot2);
+   
+   cout<<"Activar rotor 3: s/n: ";
+   cin>>rot3;
+   
+   int rot3dev=cifrar.ROTOR(rot3);
+   
+   //cifrar.SetRotores(rot1dev,rot2dev,rot3dev);
+   
+   int sumarotores=rot1dev+rot2dev+rot3dev;
+   
+   cout<<"Introduce letra 1: ";
+   cin>>letra1;
+   char letra1cod=sumarotores+cifrar.LETRA(letra1);
+   
+   cout<<"Introduce letra 2: ";
+   cin>>letra2;
+   cifrar.LETRA(letra2);
+   char letra2cod=sumarotores+cifrar.LETRA(letra2);
+   
+   cout<<"Introduce letra 3: ";
+   cin>>letra3;
+   cifrar.LETRA(letra3);
+   char letra3cod=sumarotores+cifrar.LETRA(letra3);
+   
+   cout<<"Introduce letra 4: ";
+   cin>>letra4;
+   cifrar.LETRA(letra4);
+   char letra4cod=sumarotores+cifrar.LETRA(letra4);
+   
+   cout<<"Introduce letra 5: ";
+   cin>>letra5;
+   cifrar.LETRA(letra5);
+   char letra5cod=sumarotores+cifrar.LETRA(letra5);
+   
+   cout<<"Su mensaje cifrado es"<<letra1cod;
+   cout<<letra2cod<<letra3cod;
+   cout<<letra4cod<<letra5cod;
+   
+   
+
+}
