@@ -10,3 +10,14 @@
 
    };
    
+   int filas(){
+
+      return filas;
+   }; //hecho en el de raul
+
+   
+
+   int columnas(){
+      return columnas;
+   }; //hecho
+   
