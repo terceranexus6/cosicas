@@ -1,0 +1,12 @@
+//practica 3 de programacion
+
+   void crear(int filas, int columnas){
+      vector int image;
+      for(int i=0;i<filas, i++){
+         for(int j=i;j<columnas;j++){
+            image[i][j]=0;
+         }
+      }
+
+   };
+   
