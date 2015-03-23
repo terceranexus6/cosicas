@@ -1,36 +1,14 @@
-//practica 3 de programacion
-
-   void crear(int filas, int columnas){
-      vector int image;
-      for(int i=0;i<filas, i++){
-         for(int j=i;j<columnas;j++){
-            image[i][j]=0;
-         }
-      }
-
-   };
-   
-   int filas(){
-
-      return filas;
-   }; //hecho en el de raul
-
-   
-
-   int columnas(){
-      return columnas;
-   }; //hecho
-   
-   //SEGUNDA PARTE CLASE
-   class Imagen{
+class Imagen{
 	private:
 		int nfilas;
 		int ncolumnas;
-		vector int imagen1;
+		
 		static const int MAXPIXELS = 1000000;  ///< número máximo de píxeles que podemos almacenar 
    		byte datos[MAXPIXELS];
 
 	public:
+		vector int imagen1;
+
 		Imagen(){
 			filas=0;
 			columnas=0;
@@ -47,10 +25,10 @@
 			//o llamar al return de despues????? MIRAR
 			for(int i=0;i<filas;i++){
 				for(int j=i;j<columnas;j++){
-					imagen1[i][j]=0;
+					byte[i][j]=0;
 				}
 			}
-		};
+		}
 
 		int filas(){
 		    nfilas=filas;
@@ -61,4 +39,15 @@
 			ncolumnas=columnas;
 			return columnas;
 		}
+
+		void set(int y, int x, byte v){
+			byte[y][x]=v;
+		}
+
+		byte get(int y, int x){
+			int elemento;
+			elemento=byte[y][x];
+			return elemento
+		}
+   
 }
