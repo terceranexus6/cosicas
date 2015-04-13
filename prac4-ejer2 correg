@@ -1,0 +1,91 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main ( ) {
+int i ;
+double d ;
+char c[64] ;
+ifstream fentrada ;
+
+
+char archivo[64];
+int A=0,B=0,C=0,D=0,E=0,F=0,G=0,H=0; //inicializados
+
+cout<<"\nintroduce nombre fichero, con extension incluida: ";
+cin>>archivo;
+
+fentrada.open ( archivo ) ;
+if ( fentrada ) {
+fentrada>>i ;
+fentrada>>d ;
+fentrada>>c ;
+if (!fentrada) {
+cerr <<" error de lectura de fichero \n " ;
+}
+fentrada.close();
+}
+else {
+cout<< "error de apertura de fichero \n ";
+}
+
+int array_size = 64;
+char * array = new char[array_size];
+int posicion = 0; //contador que incrementa segun se sacan elementos del archivo
+ifstream fin(archivo);
+//comprobando si se puede abrir
+if(fin.is_open())
+{
+//bucle hasta el final del archivo
+while(!fin.eof()&&posicion<array_size)
+{
+fin.get(array[posicion]); //lechendo un char del archivo al array
+posicion++;
+}
+array[posicion-1] = '\0';
+
+
+for(int i=0;i<=64;i++){
+if(i%2==0){ //si el numero de posicion es divisible entre 2, incluyendo el 0, es una letra (nombre)
+//aux=archivo(i+1);supongamos que hay de la A a la H
+if(array[i]=='A'){
+A=A+(array[i+1]); //si es A, coge la cifra a su derecha y la suma
+}
+else if(array[i]=='B'){
+B=B+(array[i+1]);
+}
+else if(array[i]=='C'){
+C=C+(array[i+1]);
+}
+else if(array[i]=='D'){
+D=D+(array[i+1]);
+}
+else if(array[i]=='E'){
+E=E+(array[i+1]);
+}
+else if(array[i]=='F'){
+F=F+(array[i+1]);
+}
+else if(array[i]=='G'){
+G=G+(array[i+1]);
+}
+else if(array[i]=='H'){
+H=H+(array[i+1]);
+}
+} //fin if
+} //fin for
+ofstream archivo2;
+archivo2<<"Los votos totales de A son: "<<A;
+archivo2<<"Los votos totales de B son: "<<B;
+archivo2<<"Los votos totales de C son: "<<C;
+archivo2<<"Los votos totales de D son: "<<D;
+archivo2<<"Los votos totales de E son: "<<E;
+archivo2<<"Los votos totales de F son: "<<F;
+archivo2<<"Los votos totales de G son: "<<G;
+archivo2<<"Los votos totales de H son: "<<H;
+
+//fentrada.close();
+
+return 0;
+}
+}
