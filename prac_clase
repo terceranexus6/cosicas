@@ -1,0 +1,27 @@
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+int main () {
+int i ;
+//double d ;
+char c[64] ;
+ifstream fentrada ;
+
+fentrada.open ( eleccionesA_V5.txt ) ;
+if ( fentrada ) {
+fentrada>>i ;
+//fentrada>>d ;
+fentrada>>c ;
+if (!fentrada) {
+cerr <<" error de lectura de fichero \n " ;
+}
+fentrada.close();
+}
+else {
+cerr << "error de apertura de fichero \n ";
+}
+
+cout<<i<<c;
+
+}
