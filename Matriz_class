@@ -1,0 +1,74 @@
+#include<iostream>
+
+using namespace std;
+
+class Matriz{
+   private:
+      double **matriz;
+      int filas;
+      int columnas;
+   public:
+      Matriz(int filas, int columnas){
+         this->filas=filas;
+         this->columnas=columnas;
+         
+         //a partir de aqui lo que no has escrito
+         
+         matriz=new double *[filas];
+         for(int i=0;i<filas;i++){
+            matriz[i]=new double[columnas];
+         }
+         //REVISAR
+      }
+      
+      //extra
+      void liberarEspacio(){
+         for(int i=0;i<filas;i++){
+            delete[]matriz[i];
+         }
+         
+         delete[]matriz;
+         matriz=0;
+      }
+      //hasta aqui
+      
+      void inicializar(double valor){
+         for(int i=0;i<filas;i++){
+            for(int j=i;j<columnas;j++){
+               matriz[i][j]=valor;
+            }//fin for j
+         }//fin for i
+      } //fin metodo
+      
+      void asignarValor(int fila, int columna, double valor){
+         matriz[fila][columna]=valor;
+      } 
+      
+      double ObtenerValor(int fila, int columna){
+         double valor;
+         valor=matriz[fila][columna];
+         cout<<valor;
+         
+         return valor;
+      }
+      
+      void imprimir(int fila, int columna){
+         for(int i=0;i<fila;i++){
+            for(int j=i;j<columnas;j++){
+               cout<<matriz[i][j];
+            }
+         }
+      }
+};
+
+//IMPORTANTE, EN EL MAIN EMPEZAR INICIALIZANDO O DEVOLVERÁ DIRECCIONES Y BASURILLA. EJEMPLO DE MAIN:
+
+
+int main(){
+   Matriz prueba(5,6);
+   
+   prueba.inicializar(1);
+   prueba.asignarValor(3,2,6);
+   prueba.ObtenerValor(2,2);
+   
+}
