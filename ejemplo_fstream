@@ -1,0 +1,78 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main() {
+   const int TAMNOMBRE=100;
+   const int NUMEROMESAS=8;
+   int puntuaciones[]={0,0,0,0,0,0,0,0};
+   char nombreArchivo[TAMNOMBRE];
+   ifstream fentrada;
+   ofstream fsalida;
+   char id;
+   int puntuacion, indice, numeroMesas;
+   
+   // Se pide al usuario que introduzca el nombre del archivo
+   cout << "Introduzca nombre archivo entrada: ";
+   cin >> nombreArchivo;
+   
+   // Se hace la apertura
+   fentrada.open(nombreArchivo);
+   
+   // Control de errores
+   if (!fentrada){
+      cout << "Problema de apertura de archivo" << endl;
+      return -1;
+   }
+   
+   // En caso de apertura correcta, leemos el numero de
+   // mesas
+   fentrada >> numeroMesas;
+   
+   // Bucle de lectura de pares idMesa - puntuacion
+   for(int i=0; i < numeroMesas; i++){
+      // Se lee el id
+      fentrada >> id;
+      
+      // Se lee la puntuacion
+      fentrada >> puntuacion;
+      
+      // Se calcula el indice
+      indice=id-'A';
+      
+      // Se actualiza el contador
+      puntuaciones[indice]=puntuaciones[indice]+puntuacion;
+   }
+   
+   // Se cierra el archivo
+   fentrada.close();
+   
+   // Se muestra el contenido del array
+   for(int i=0; i < NUMEROMESAS; i++){
+      cout << "Puntuacion de mesa " << i << " : " << puntuaciones[i] << endl;
+   }
+   
+   // Preguntamos al usuario el nombre del archivo de salida
+   cout << "Introduzca nombre de archivo de salida: ";
+   cin >> nombreArchivo;
+   
+   // Apertura archivo de salida
+   fsalida.open(nombreArchivo);
+   
+   // Control de error
+   if (!fsalida){
+      cout << "Problema de apertura de archivo de salida " << endl;
+      return -1;
+   }
+   
+   // Si todo OK, ir mostrando las puntuaciones
+   char letra='A';
+   for(int i=0; i < NUMEROMESAS; i++){
+      fsalida << (char)(letra+i) << " : "  << puntuaciones[i] << endl;
+   }
+   
+   // Se cierra el archivo
+   fsalida.close();
+}
