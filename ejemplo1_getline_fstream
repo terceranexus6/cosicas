@@ -1,0 +1,34 @@
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+
+int main(){
+   char str[250];
+   char str2[250];
+   char name[256];
+   char movie[256];
+   char c,c2;
+   
+   cout<<"introduce nombre y dirección de archivo: ";
+   cin.getline(str, 250);
+   
+   ifstream is(str);
+   is>>name;
+      is.close();
+   
+   cout<<"introduce ... : ";
+   cin.getline(str2, 250);
+   ifstream is2(str2);
+   is2>>movie;
+      is2.close();
+   
+   cout<<"tu nombre es "<<name;
+   cout<<" y tu pelicula es "<<movie;
+   
+   
+  
+   
+   return 0;
+   
+}
