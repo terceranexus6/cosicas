@@ -39,7 +39,7 @@ if(fin.is_open())
 //bucle hasta el final del archivo
 while(!fin.eof()&&posicion<array_size)
 {
-fin.get(array[posicion]); //lechendo un char del archivo al array
+fin.get(array[posicion]); //leyendo un char del archivo al array
 posicion++;
 }
 array[posicion-1] = '\0';
