@@ -10,3 +10,22 @@ function payment() {
 payment: <input type="text" id="numbers" value="">
 <input type=button value="pay" onClick="payment()"><br>
 credicts left: <span id="results">(click "pay")</span>
+//VERSION NUEVA PARA TUMBLR
+
+<script>
+function payment() {
+  var credits=document.getElementById('credits').value;
+  var input = document.getElementById('input').value;
+  var results = credits-input;
+  document.getElementById('results').innerHTML = results;
+}
+</script>
+credits: <input type="text" id="credits" value="1000">
+payment: <input type="text" id="input" value="">
+<input type=button value="pay" onClick="payment()"><br>
+credicts left: <span id="results">(click "pay")</span><br>
+REMEMBER CITIZEN<br>
+if the number is negative your debt with the bank will be archived<br>
+Pay the debt in a week. If not, we will proceed to tell the police.<br>
+This regard to anyone living in TERRA or in the colonies<br>
+Thank you
