@@ -29,3 +29,31 @@ if the number is negative your debt with the bank will be archived<br>
 Pay the debt in a week. If not, we will proceed to tell the police.<br>
 This regard to anyone living in TERRA or in the colonies<br>
 Thank you
+
+//FINAL YA DEL TODO
+
+<script>
+function payment() {
+
+  var credits=document.getElementById('credits').value;
+  var input = document.getElementById('input').value;
+  var results = credits-input;
+  document.getElementById('results').innerHTML = results;
+}
+function guardar(){
+    window.open('https://www.tumblr.com/blog/creditpayment/new/text');
+}
+</script>
+
+<b>credits:</b> <input type="text" id="credits" value="0">
+<b>payment:</b> <input type="text" id="input" value="0">
+<input type=button value="pay" onClick="payment()">
+<input type=button value="archive" onClick="guardar()"><br>
+<b>credits left:</b> <span id="results">(click "pay")</span><br>
+<h2 align="center">CREDIT BANK</h2>
+<img src="http://cyberpunk.asia/interface/kanizsa.jpg" alt="Mountain View" style="height:228px;" ><br><br>
+<b>REMEMBER USER</b><br>
+if the number is negative your debt with the bank will be archived<br>
+Pay the debt in a week. If not, we will proceed to tell the police.<br>
+This regard to anyone living in TERRA or in the colonies<br>
+<b>ありがとう</b><br><br>
