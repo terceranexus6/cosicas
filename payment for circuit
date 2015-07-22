@@ -1,0 +1,12 @@
+<script>
+function payment() {
+  var credits=200;
+  var input = document.getElementById('numbers').value;
+  var results = credits-input;
+  document.getElementById('results').innerHTML = results;
+}
+</script>
+
+payment: <input type="text" id="numbers" value="">
+<input type=button value="pay" onClick="payment()"><br>
+credicts left: <span id="results">(click "pay")</span>
