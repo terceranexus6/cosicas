@@ -42,8 +42,26 @@
       <h4>Museo</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Home</a></li>
-        <li><a href="#section2">Idioma</a></li>
-        <li><a href="#section3">Rol visitante</a></li>
+        <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2" role="button" aria-haspopup="true" aria-expanded="false">
+      Idioma <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+    <li><a href="#español">Español</a></li>
+        <li><a href="#section3">ingles</a></li>
+    </ul>
+    
+    
+        <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2" role="button" aria-haspopup="true" aria-expanded="false">
+      Rol visitante <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+    	<li><a href="#junior">Junior</a></li>
+        <li><a href="#vista">Discapacidad visual</a></li>
+        <li><a href="#vista">Discapacidad cognitiva</a></li>
+        <li><a href="#vista">Discapacidad móvil</a></li>
+    </ul>
         <li><a href="#section3">Sala</a></li>
       </ul><br>
       <div class="input-group">
