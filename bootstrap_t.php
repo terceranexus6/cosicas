@@ -40,39 +40,57 @@
   <div class="row content">
     <div class="col-sm-3 sidenav">
       <h4>Museo</h4>
-      <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Home</a></li>
-        <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2" role="button" aria-haspopup="true" aria-expanded="false">
-      Idioma <span class="caret"></span>
-    </a>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Menu
+    <span class="caret"></span></button>
     <ul class="dropdown-menu">
-    <li><a href="#español">Español</a></li>
-        <li><a href="#section3">ingles</a></li>
+      <li><a tabindex="-1" href="#">Idioma</a></li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">Idioma <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">Español</a></li>
+          <li><a tabindex="-1" href="#">Inglés</a></li>
+         </ul>
+       </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">Rol del visitante <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">Estándard</a></li>
+          <li><a tabindex="-1" href="#">Junior</a></li>
+          <li class="dropdown-submenu">
+            <a class="test" href="#">Discapacidad <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Visual</a></li>
+              <li><a href="#">De movilidad</a></li>
+              <li><a href="#">Cognitiva</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
-    
-    
-        <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#section2" role="button" aria-haspopup="true" aria-expanded="false">
-      Rol visitante <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-    	<li><a href="#junior">Junior</a></li>
-        <li><a href="#vista">Discapacidad visual</a></li>
-        <li><a href="#vista">Discapacidad cognitiva</a></li>
-        <li><a href="#vista">Discapacidad móvil</a></li>
-    </ul>
-        <li><a href="#section3">Sala</a></li>
-      </ul><br>
-      <div class="input-group">
+  </div>
+  <div class="input-group">
+        <input type="text" class="form-control" placeholder="Escribe nombre o ID de la Sala">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+           <span class="glyphicon glyphicon-flag"></span>
+          </button>
+        </span>
+   </div>
+  <div class="input-group">
         <input type="text" class="form-control" placeholder="Para buscar más..">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <span class="glyphicon glyphicon-search"></span>
           </button>
         </span>
-      </div>
-    </div>
+   </div>
+</div>
+
+
+
+      
+      
 
     <div class="col-sm-9">
       <h4><small>ÚLTIMAS ACTUALIZACIONES</small></h4>
@@ -91,52 +109,24 @@
       <p>El alicatá es un complicado tipo de arte que trata de encajar piedras y cristales de diversos colores en madera de forma armoniosa. Podemos observar y tocar el ejemplo de nuestra sala Andalusí.</p>
       <hr>
 
-      <h4>Deja un comentario de la sala:</h4>
-      <form role="form">
-        <div class="form-group">
-          <textarea class="form-control" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-success">Comentar!</button>
-      </form>
-      <br><br>
       
-      <p><span class="badge">2</span> Comments:</p><br>
       
-      <div class="row">
-        <div class="col-sm-2 text-center">
-          <img src="bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-        </div>
-        <div class="col-sm-10">
-          <h4>Anja <small>Sep 29, 2017, 9:12 PM</small></h4>
-          <p>Genial, me encanta esta sala, he aprendido un montón.</p>
-          <br>
-        </div>
-        <div class="col-sm-2 text-center">
-          <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-        </div>
-        <div class="col-sm-10">
-          <h4>Juan <small>Sep 25, 2017, 8:25 PM</small></h4>
-          <p>Me gusta mucho, especialmente la maqueta de la Alhambra.</p>
-          <br>
-          <p><span class="badge">1</span> Respuesta:</p><br>
-          <div class="row">
-            <div class="col-sm-2 text-center">
-              <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-            </div>
-            <div class="col-xs-10">
-              <h4>Patricia<small>Sep 25, 2017, 8:28 PM</small></h4>
-              <p>Si, es casi igual que la original... ¡Me encanta!</p>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      
     </div>
   </div>
-</div>
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
 
 <footer class="container-fluid">
-  <p>Footer Text</p>
+  <p>Desarrollado por Kraken Software</p>
 </footer>
 
 </body>
